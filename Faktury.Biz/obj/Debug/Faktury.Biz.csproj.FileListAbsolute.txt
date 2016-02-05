@@ -1,0 +1,15 @@
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\Faktury.Biz.dll.config
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\Faktury.Biz.dll
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\Faktury.Biz.pdb
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\EntityFramework.dll
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\itextsharp.dll
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\EntityFramework.xml
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\bin\Debug\itextsharp.xml
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\obj\Debug\Faktury.Biz.Migrations.InitialCreate.resources
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\obj\Debug\Faktury.Biz.Migrations._01012016.resources
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\obj\Debug\Faktury.Biz.csproj.GenerateResource.Cache
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\obj\Debug\Faktury.Biz.dll
+C:\Users\Maciek\Desktop\FakturyLite\Faktury\Faktury.Biz\obj\Debug\Faktury.Biz.pdb

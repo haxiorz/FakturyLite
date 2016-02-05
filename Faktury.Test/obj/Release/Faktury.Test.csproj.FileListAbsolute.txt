@@ -1,0 +1,15 @@
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\Faktury.Test.dll.config
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\Faktury.Test.dll
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\Faktury.Test.pdb
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\Faktury.Biz.dll
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\FakturyWinForms.exe
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\EntityFramework.dll
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\itextsharp.dll
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\Faktury.Biz.pdb
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\FakturyWinForms.pdb
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\EntityFramework.xml
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\itextsharp.xml
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\bin\Release\pl\FakturyWinForms.resources.dll
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\obj\Release\Faktury.Test.csprojResolveAssemblyReference.cache
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\obj\Release\Faktury.Test.dll
+C:\Users\Maciek\Desktop\Faktury\Faktury.Test\obj\Release\Faktury.Test.pdb

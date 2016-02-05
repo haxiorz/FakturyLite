@@ -1,0 +1,71 @@
+﻿using Faktury.Biz;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Faktury.WinForms
+{
+    public partial class EditClient : Form
+    {
+        public EditClient(ManageClients manage, int clientId, string name, string address, string nip)
+        {
+            InitializeComponent();
+            manageClientsWindow = manage;
+            _clientId = clientId;
+            txtClientName.Text = name;
+            txtClientAddress.Text = address;
+            txtClientNIP.Text = nip;
+        }
+
+        ManageClients manageClientsWindow;
+        private int _clientId;
+
+        /// <summary>
+        /// Editing client info in database
+        /// </summary>
+        /// <param name="name">Client name</param>
+        /// <param name="address">Client address</param>
+        /// <param name="nip">Client NIP</param>
+        /// <param name="id">Client Id</param>
+        private void EditClientInDatabase(string name, string address, string nip, int id)
+        {
+            using(var context = new FakturyContext())
+            {
+                var client = context.Clients
+                    .Where(n => n.Id == id)
+                    .FirstOrDefault();
+                client.Name = name;
+                client.Address = address;
+                client.NIP = nip;
+                context.SaveChanges();
+            }
+        }
+
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtClientName.Text) && !string.IsNullOrWhiteSpace(txtClientAddress.Text) && txtClientNIP.Mask.Length == 13)
+            {
+                try
+                {
+                    EditClientInDatabase(txtClientName.Text, txtClientAddress.Text, txtClientNIP.Text, _clientId);
+                    this.Close();
+                    manageClientsWindow.UpdateListView();
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wprowadź poprawne dane");
+            }
+        }
+    }
+}
