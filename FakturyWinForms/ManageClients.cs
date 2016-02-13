@@ -54,7 +54,7 @@ namespace Faktury.WinForms
         /// <summary>
         /// Deleting selected Client from Database
         /// </summary>
-        private void DeleteClient()
+        private void DeleteObject()
         {
             try
             {
@@ -97,16 +97,23 @@ namespace Faktury.WinForms
                 MessageBox.Show("Zaznacz klienta do edycji", err.ToString());
             }
         }
-
+        
         private void btnDeleteClient_Click(object sender, EventArgs e)
         {
-            DeleteClient();
+            
+            DeleteConfirmation deleteConfirmation = new DeleteConfirmation("danych klienta");
+            deleteConfirmation.ShowDialog(this);
+            if (deleteConfirmation.delConfirmation)
+            {
+                DeleteObject();
+            }
+            
         }
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
             AddClient addClientForm = new AddClient(this);
-            addClientForm.Show();
+            addClientForm.ShowDialog(this);
         }
 
         private void btnEditClient_Click(object sender, EventArgs e)

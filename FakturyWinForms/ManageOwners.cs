@@ -55,7 +55,7 @@ namespace Faktury.WinForms
         /// <summary>
         /// Deleting selected Owner from Database
         /// </summary>
-        private void DeleteOwner()
+        private void DeleteObject()
         {
             try
             {
@@ -112,7 +112,12 @@ namespace Faktury.WinForms
 
         private void btnDeleteOwner_Click(object sender, EventArgs e)
         {
-            DeleteOwner();
+            DeleteConfirmation deleteConfirmation = new DeleteConfirmation("danych klienta");
+            deleteConfirmation.ShowDialog(this);
+            if (deleteConfirmation.delConfirmation)
+            {
+                DeleteObject();
+            }
         }
     }
 }

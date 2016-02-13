@@ -240,12 +240,12 @@ namespace Faktury.WinForms
             {
                 try
                 {
+                   
                     Client client = new Client(txtClientName.Text, txtClientAddress.Text, txtClientNip.Text);
                     Owner owner = new Owner(txtSellerName.Text, txtSellerAddress.Text, txtSellerNip.Text);
                     invoice = new Invoice(dtpDate.Text, txtNumber.Text, client, owner, products);
                     PDFCreator creator = new PDFCreator(invoice);
                     creator.CreatePDF();
-                    MessageBox.Show("Utworzono plik PDF.");
                 }
                 catch (Exception err)
                 {
@@ -267,13 +267,13 @@ namespace Faktury.WinForms
         private void dodajKlientaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageClients manageclientsform = new ManageClients(this);
-            manageclientsform.Show();
+            manageclientsform.ShowDialog(this);
         }
 
         private void edytujSwojeDaneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageOwners manageownersform = new ManageOwners(this);
-            manageownersform.Show();
+            manageownersform.ShowDialog(this);
         }
 
         private void cbClient_SelectedIndexChanged(object sender, EventArgs e)
@@ -301,6 +301,12 @@ namespace Faktury.WinForms
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
            FormsHelpers.validate_textBox(sender as TextBox, e);
+        }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
         }
     }
 }

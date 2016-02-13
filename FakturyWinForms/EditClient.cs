@@ -49,7 +49,7 @@ namespace Faktury.WinForms
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtClientName.Text) && !string.IsNullOrWhiteSpace(txtClientAddress.Text) && txtClientNIP.Mask.Length == 13)
+            if (!string.IsNullOrWhiteSpace(txtClientName.Text) && !string.IsNullOrWhiteSpace(txtClientAddress.Text) && txtClientNIP.MaskCompleted)
             {
                 try
                 {

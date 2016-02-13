@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Windows.Forms;
 
 namespace Faktury.Biz
 {
@@ -46,23 +47,35 @@ namespace Faktury.Biz
               Font f = new iTextSharp.text.Font(bf, 12, Font.NORMAL);
             
 
-              int count = 1;
+              //int count = 1;
               string fullPath = "Faktura " + invoice.Date + ".pdf";
-              string fileNameOnly = Path.GetFileNameWithoutExtension(fullPath);
-              string extension = Path.GetExtension(fullPath);
-              string path = Path.GetDirectoryName(fullPath);
-              string newFullPath = fullPath;
+              //Old saving style
+              //string fileNameOnly = Path.GetFileNameWithoutExtension(fullPath);
+              //string extension = Path.GetExtension(fullPath);
+              //string path = Path.GetDirectoryName(fullPath);
+              //string newFullPath = fullPath;
 
-              while (File.Exists(newFullPath))
-              {
-                  string tempFileName = string.Format("{0}({1})", fileNameOnly, count++);
-                  newFullPath = Path.Combine(path, tempFileName + extension);
-              }
+              //while (File.Exists(newFullPath))
+              //{
+              //    string tempFileName = string.Format("{0}({1})", fileNameOnly, count++);
+              //    newFullPath = Path.Combine(path, tempFileName + extension);
+              //}
 
               PdfPTable saleTable = SaleTable();
-              
 
-              PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(newFullPath, FileMode.Create));
+              
+              //PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(newFullPath, FileMode.Create));
+              SaveFileDialog dialog = new SaveFileDialog();
+              dialog.Title = "Save file as...";
+              dialog.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
+              dialog.FileName = fullPath;
+              dialog.RestoreDirectory = true;
+
+              if (dialog.ShowDialog() == DialogResult.OK)
+              {
+                  PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(dialog.FileName, FileMode.Create));
+                  MessageBox.Show("Utworzono plik PDF");
+              }
               doc.Open();
               
               //Title
