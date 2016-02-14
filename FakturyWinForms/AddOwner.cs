@@ -27,9 +27,9 @@ namespace Faktury.WinForms
         /// <param name="name">Owner name</param>
         /// <param name="address">Owner address</param>
         /// <param name="nip">Owner NIP</param>
-        private void AddOwnerToDatabase(string name, string address, string nip)
+        private void AddOwnerToDatabase(string name, string address, string city, string postcode, string nip)
         {
-            var owner = new Owner(name, address, nip);
+            var owner = new Owner(name, address, city, postcode, nip);
             using (var context = new FakturyContext())
             {
                 context.Owners.Add(owner);
@@ -43,7 +43,7 @@ namespace Faktury.WinForms
             {
                 try
                 {
-                    AddOwnerToDatabase(txtOwnerName.Text, txtOwnerAddress.Text, txtOwnerNIP.Text);
+                    AddOwnerToDatabase(txtOwnerName.Text, txtOwnerAddress.Text, txtOwnerCity.Text, txtOwnerPostCode.Text, txtOwnerNIP.Text);
                     this.Close();
                     manageOwnersWindow.UpdateListView();
                 }

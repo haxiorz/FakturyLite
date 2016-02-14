@@ -71,6 +71,8 @@ namespace Faktury.WinForms
                         .FirstOrDefault();
                     txtSellerName.Text = defaultOwner.Name;
                     txtSellerAddress.Text = defaultOwner.Address;
+                    txtSellerCity.Text = defaultOwner.City;
+                    txtSellerPostCode.Text = defaultOwner.PostCode;
                     txtSellerNip.Text = defaultOwner.NIP;
                 }
             }
@@ -162,6 +164,8 @@ namespace Faktury.WinForms
 
                 txtSellerName.Text = owner.Name;
                 txtSellerAddress.Text = owner.Address;
+                txtSellerCity.Text = owner.City;
+                txtSellerPostCode.Text = owner.PostCode;
                 txtSellerNip.Text = owner.NIP;
             }
         }
@@ -176,6 +180,8 @@ namespace Faktury.WinForms
 
                 txtClientName.Text = client.Name;
                 txtClientAddress.Text = client.Address;
+                txtClientCity.Text = client.City;
+                txtClientPostCode.Text = client.PostCode;
                 txtClientNip.Text = client.NIP;
             }
         }
@@ -200,12 +206,22 @@ namespace Faktury.WinForms
             FormsHelpers.ValidateWhitespace(sender, e);
         }
 
+        private void txtSellerCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsHelpers.ValidateWhitespace(sender, e);
+        }
+
         private void txtBuyerName_KeyPress(object sender, KeyPressEventArgs e)
         {
             FormsHelpers.ValidateWhitespace(sender, e);
         }
 
         private void txtBuyerAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsHelpers.ValidateWhitespace(sender, e);
+        }
+
+        private void txtClientCity_KeyPress(object sender, KeyPressEventArgs e)
         {
             FormsHelpers.ValidateWhitespace(sender, e);
         }
@@ -241,8 +257,8 @@ namespace Faktury.WinForms
                 try
                 {
                    
-                    Client client = new Client(txtClientName.Text, txtClientAddress.Text, txtClientNip.Text);
-                    Owner owner = new Owner(txtSellerName.Text, txtSellerAddress.Text, txtSellerNip.Text);
+                    Client client = new Client(txtClientName.Text, txtClientAddress.Text, txtClientCity.Text, txtClientPostCode.Text, txtClientNip.Text);
+                    Owner owner = new Owner(txtSellerName.Text, txtSellerAddress.Text, txtSellerCity.Text, txtSellerPostCode.Text, txtSellerNip.Text);
                     invoice = new Invoice(dtpDate.Text, txtNumber.Text, client, owner, products);
                     PDFCreator creator = new PDFCreator(invoice);
                     creator.CreatePDF();
@@ -308,5 +324,6 @@ namespace Faktury.WinForms
             e.Cancel = true;
             e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
         }
+
     }
 }

@@ -32,6 +32,8 @@
             this.ClientId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClientName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClientAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClientCity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClientPostCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ClientNIP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddClient = new System.Windows.Forms.Button();
             this.btnDeleteClient = new System.Windows.Forms.Button();
@@ -44,16 +46,19 @@
             this.ClientId,
             this.ClientName,
             this.ClientAddress,
+            this.ClientCity,
+            this.ClientPostCode,
             this.ClientNIP});
             this.listView1.FullRowSelect = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.Location = new System.Drawing.Point(14, 12);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(613, 219);
+            this.listView1.Size = new System.Drawing.Size(714, 219);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView1_ColumnWidthChanging);
             // 
             // ClientId
             // 
@@ -63,12 +68,22 @@
             // ClientName
             // 
             this.ClientName.Text = "Nazwa";
-            this.ClientName.Width = 198;
+            this.ClientName.Width = 179;
             // 
             // ClientAddress
             // 
             this.ClientAddress.Text = "Adres";
-            this.ClientAddress.Width = 265;
+            this.ClientAddress.Width = 184;
+            // 
+            // ClientCity
+            // 
+            this.ClientCity.Text = "Miejscowość";
+            this.ClientCity.Width = 103;
+            // 
+            // ClientPostCode
+            // 
+            this.ClientPostCode.Text = "Kod pocztowy";
+            this.ClientPostCode.Width = 99;
             // 
             // ClientNIP
             // 
@@ -77,43 +92,48 @@
             // 
             // btnAddClient
             // 
-            this.btnAddClient.Location = new System.Drawing.Point(12, 237);
+            this.btnAddClient.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddClient.Location = new System.Drawing.Point(14, 237);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(86, 28);
+            this.btnAddClient.Size = new System.Drawing.Size(100, 28);
             this.btnAddClient.TabIndex = 1;
             this.btnAddClient.Text = "Nowy klient";
-            this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.UseVisualStyleBackColor = false;
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
             // btnDeleteClient
             // 
-            this.btnDeleteClient.Location = new System.Drawing.Point(539, 237);
+            this.btnDeleteClient.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDeleteClient.Location = new System.Drawing.Point(629, 237);
             this.btnDeleteClient.Name = "btnDeleteClient";
-            this.btnDeleteClient.Size = new System.Drawing.Size(86, 28);
+            this.btnDeleteClient.Size = new System.Drawing.Size(100, 28);
             this.btnDeleteClient.TabIndex = 2;
             this.btnDeleteClient.Text = "Usuń ";
-            this.btnDeleteClient.UseVisualStyleBackColor = true;
+            this.btnDeleteClient.UseVisualStyleBackColor = false;
             this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
             // 
             // btnEditClient
             // 
-            this.btnEditClient.Location = new System.Drawing.Point(447, 237);
+            this.btnEditClient.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEditClient.Location = new System.Drawing.Point(521, 237);
             this.btnEditClient.Name = "btnEditClient";
-            this.btnEditClient.Size = new System.Drawing.Size(86, 28);
+            this.btnEditClient.Size = new System.Drawing.Size(100, 28);
             this.btnEditClient.TabIndex = 3;
             this.btnEditClient.Text = "Edytuj";
-            this.btnEditClient.UseVisualStyleBackColor = true;
+            this.btnEditClient.UseVisualStyleBackColor = false;
             this.btnEditClient.Click += new System.EventHandler(this.btnEditClient_Click);
             // 
             // ManageClients
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 342);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(742, 342);
             this.Controls.Add(this.btnEditClient);
             this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.listView1);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ManageClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -132,5 +152,7 @@
         private System.Windows.Forms.Button btnDeleteClient;
         private System.Windows.Forms.Button btnEditClient;
         private System.Windows.Forms.ColumnHeader ClientId;
+        private System.Windows.Forms.ColumnHeader ClientCity;
+        private System.Windows.Forms.ColumnHeader ClientPostCode;
     }
 }

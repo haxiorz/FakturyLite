@@ -94,6 +94,8 @@ namespace Faktury.Biz
 
               doc.Add(companyName);
               doc.Add(new Paragraph(owner.Address, f));
+              doc.Add(new Paragraph(owner.City, f));
+              doc.Add(new Paragraph(owner.PostCode, f));
               doc.Add(new Paragraph(owner.NIP, f));
               doc.Add(new Paragraph("__________________________", f));
 
@@ -101,9 +103,13 @@ namespace Faktury.Biz
               doc.Add(new Paragraph("Faktura dla:"));
               doc.Add(new Paragraph(client.Name, f));
               doc.Add(new Paragraph(client.Address, f));
+              doc.Add(new Paragraph(client.City, f));
+              doc.Add(new Paragraph(client.PostCode, f));
               doc.Add(new Paragraph(client.NIP, f));
 
-              Paragraph separator = new Paragraph("_____________________________________________________________________________      ", f);
+              Paragraph separator = new Paragraph("__________________________", f);
+              doc.Add(new Paragraph());
+              doc.Add(new Paragraph());
               separator.SpacingAfter = 5.5f;
               doc.Add(separator);
 
@@ -122,9 +128,9 @@ namespace Faktury.Biz
             //Tabela produktów
             PdfPTable table = new PdfPTable(5);
             table.TotalWidth = 1000f;
-            float[] widths = new float[] {0.5f,4f,1f,0.5f,1f};
+            float[] widths = new float[] { 0.5f, 4f, 1f, 0.5f, 1f };
             table.SetWidths(widths);
-            
+
 
             //Nagłówki tabeli
             table.AddCell(HeaderCell("Lp."));
@@ -137,9 +143,9 @@ namespace Faktury.Biz
             foreach (var product in products)
             {
                 table.AddCell(QuantityCell(product.Id + "."));
-                table.AddCell(new Phrase(product.Name,f));
-                table.AddCell(new Phrase(product.NettoPrice.ToString("c"),f));
-                table.AddCell(new Phrase(product.Quantity.ToString(),f));
+                table.AddCell(new Phrase(product.Name, f));
+                table.AddCell(new Phrase(product.NettoPrice.ToString("c"), f));
+                table.AddCell(new Phrase(product.Quantity.ToString(), f));
                 table.AddCell(PriceCell(product.TotalNettoPrice.ToString("c")));
             }
 

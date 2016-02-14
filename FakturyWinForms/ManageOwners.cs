@@ -34,6 +34,8 @@ namespace Faktury.WinForms
                     items.Add(new ListViewItem(owner.Id.ToString()));
                     items[_itemscounter].SubItems.Add(owner.Name);
                     items[_itemscounter].SubItems.Add(owner.Address);
+                    items[_itemscounter].SubItems.Add(owner.City);
+                    items[_itemscounter].SubItems.Add(owner.PostCode);
                     items[_itemscounter].SubItems.Add(owner.NIP);
                     listView1.Items.Add(items[_itemscounter]);
                     _itemscounter++;
@@ -89,8 +91,10 @@ namespace Faktury.WinForms
                 int selectedClientId = Int32.Parse(selectedClient.SubItems[0].Text);
                 string ownerName = selectedClient.SubItems[1].Text;
                 string ownerAddress = selectedClient.SubItems[2].Text;
-                string ownerNip = selectedClient.SubItems[3].Text;
-                EditOwner editClientForm = new EditOwner(this, selectedClientId, ownerName, ownerAddress, ownerNip);
+                string ownerCity = selectedClient.SubItems[3].Text;
+                string ownerPostCode = selectedClient.SubItems[4].Text;
+                string ownerNip = selectedClient.SubItems[5].Text;
+                EditOwner editClientForm = new EditOwner(this, selectedClientId, ownerName, ownerAddress, ownerCity, ownerPostCode, ownerNip);
                 editClientForm.Show();
             }
             catch (Exception err)
@@ -118,6 +122,12 @@ namespace Faktury.WinForms
             {
                 DeleteObject();
             }
+        }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
         }
     }
 }

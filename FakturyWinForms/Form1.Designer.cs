@@ -32,6 +32,11 @@
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtSellerPostCode = new System.Windows.Forms.MaskedTextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtSellerCity = new System.Windows.Forms.TextBox();
             this.cbOwner = new System.Windows.Forms.ComboBox();
             this.txtSellerNip = new System.Windows.Forms.MaskedTextBox();
             this.txtSellerAddress = new System.Windows.Forms.TextBox();
@@ -40,6 +45,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtClientPostCode = new System.Windows.Forms.MaskedTextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtClientCity = new System.Windows.Forms.TextBox();
             this.cbClient = new System.Windows.Forms.ComboBox();
             this.txtClientNip = new System.Windows.Forms.MaskedTextBox();
             this.txtClientAddress = new System.Windows.Forms.TextBox();
@@ -56,7 +66,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cbVat = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -75,6 +84,7 @@
             this.edytujSwojeDaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajKlientaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProductCount)).BeginInit();
@@ -95,6 +105,11 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.txtSellerPostCode);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtSellerCity);
             this.groupBox1.Controls.Add(this.cbOwner);
             this.groupBox1.Controls.Add(this.txtSellerNip);
             this.groupBox1.Controls.Add(this.txtSellerAddress);
@@ -104,6 +119,32 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
+            // txtSellerPostCode
+            // 
+            resources.ApplyResources(this.txtSellerPostCode, "txtSellerPostCode");
+            this.txtSellerPostCode.Name = "txtSellerPostCode";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // txtSellerCity
+            // 
+            resources.ApplyResources(this.txtSellerCity, "txtSellerCity");
+            this.txtSellerCity.Name = "txtSellerCity";
+            this.txtSellerCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSellerCity_KeyPress);
             // 
             // cbOwner
             // 
@@ -150,6 +191,11 @@
             // groupBox2
             // 
             resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.txtClientPostCode);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.txtClientCity);
             this.groupBox2.Controls.Add(this.cbClient);
             this.groupBox2.Controls.Add(this.txtClientNip);
             this.groupBox2.Controls.Add(this.txtClientAddress);
@@ -159,6 +205,32 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // txtClientPostCode
+            // 
+            resources.ApplyResources(this.txtClientPostCode, "txtClientPostCode");
+            this.txtClientPostCode.Name = "txtClientPostCode";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // txtClientCity
+            // 
+            resources.ApplyResources(this.txtClientCity, "txtClientCity");
+            this.txtClientCity.Name = "txtClientCity";
+            this.txtClientCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClientCity_KeyPress);
             // 
             // cbClient
             // 
@@ -257,6 +329,7 @@
             // cbVat
             // 
             resources.ApplyResources(this.cbVat, "cbVat");
+            this.cbVat.BackColor = System.Drawing.SystemColors.Control;
             this.cbVat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVat.FormattingEnabled = true;
             this.cbVat.Items.AddRange(new object[] {
@@ -269,11 +342,6 @@
             // 
             resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
             // 
             // listView1
             // 
@@ -329,21 +397,25 @@
             // btnClearAll
             // 
             resources.ApplyResources(this.btnClearAll, "btnClearAll");
+            this.btnClearAll.BackColor = System.Drawing.SystemColors.Control;
             this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.UseVisualStyleBackColor = false;
             this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
             // btnAddProduct
             // 
             resources.ApplyResources(this.btnAddProduct, "btnAddProduct");
+            this.btnAddProduct.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.UseVisualStyleBackColor = false;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnCreatePDF
             // 
             resources.ApplyResources(this.btnCreatePDF, "btnCreatePDF");
+            this.btnCreatePDF.BackColor = System.Drawing.SystemColors.Control;
             this.btnCreatePDF.Name = "btnCreatePDF";
-            this.btnCreatePDF.UseVisualStyleBackColor = true;
+            this.btnCreatePDF.UseVisualStyleBackColor = false;
             this.btnCreatePDF.Click += new System.EventHandler(this.btnCreatePDF_Click);
             // 
             // txtPrice
@@ -355,6 +427,7 @@
             // menuStrip1
             // 
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.BackColor = System.Drawing.Color.Silver;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem});
             this.menuStrip1.Name = "menuStrip1";
@@ -382,20 +455,28 @@
             // button1
             // 
             resources.ApplyResources(this.button1, "button1");
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.btnCreatePDF);
             this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cbVat);
             this.Controls.Add(this.label11);
@@ -410,7 +491,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -451,7 +532,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbVat;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader6;
@@ -474,6 +554,17 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbOwner;
         private System.Windows.Forms.ComboBox cbClient;
+        private System.Windows.Forms.MaskedTextBox txtSellerPostCode;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtSellerCity;
+        private System.Windows.Forms.MaskedTextBox txtClientPostCode;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtClientCity;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }
 

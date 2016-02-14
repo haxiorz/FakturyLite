@@ -20,9 +20,9 @@ namespace Faktury.WinForms
         /// <param name="name">Client name</param>
         /// <param name="address">Client address</param>
         /// <param name="nip">Client NIP</param>
-        private void AddClientToDatabase(string name, string address, string nip)
+        private void AddClientToDatabase(string name, string address, string city, string postcode, string nip)
         {
-            var client = new Client(name, address, nip);
+            var client = new Client(name, address, city, postcode, nip);
             using (var context = new FakturyContext())
             {
                 context.Clients.Add(client);
@@ -36,7 +36,7 @@ namespace Faktury.WinForms
             {
                 try
                 {
-                    AddClientToDatabase(txtClientName.Text, txtClientAddress.Text, txtClientNIP.Text);
+                    AddClientToDatabase(txtClientName.Text, txtClientAddress.Text, txtClientCity.Text, txtClientPostCode.Text, txtClientNIP.Text);
                     this.Close();
                     manageClientsWindow.UpdateListView();
                 }

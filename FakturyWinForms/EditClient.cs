@@ -13,13 +13,15 @@ namespace Faktury.WinForms
 {
     public partial class EditClient : Form
     {
-        public EditClient(ManageClients manage, int clientId, string name, string address, string nip)
+        public EditClient(ManageClients manage, int clientId, string name, string address, string city, string postcode, string nip)
         {
             InitializeComponent();
             manageClientsWindow = manage;
             _clientId = clientId;
             txtClientName.Text = name;
             txtClientAddress.Text = address;
+            txtClientCity.Text = city;
+            txtClientPostCode.Text = postcode;
             txtClientNIP.Text = nip;
         }
 
@@ -33,7 +35,7 @@ namespace Faktury.WinForms
         /// <param name="address">Client address</param>
         /// <param name="nip">Client NIP</param>
         /// <param name="id">Client Id</param>
-        private void EditClientInDatabase(string name, string address, string nip, int id)
+        private void EditClientInDatabase(string name, string address, string city, string postcode, string nip, int id)
         {
             using(var context = new FakturyContext())
             {
@@ -42,6 +44,8 @@ namespace Faktury.WinForms
                     .FirstOrDefault();
                 client.Name = name;
                 client.Address = address;
+                client.City = city;
+                client.PostCode = postcode;
                 client.NIP = nip;
                 context.SaveChanges();
             }
@@ -53,7 +57,7 @@ namespace Faktury.WinForms
             {
                 try
                 {
-                    EditClientInDatabase(txtClientName.Text, txtClientAddress.Text, txtClientNIP.Text, _clientId);
+                    EditClientInDatabase(txtClientName.Text, txtClientAddress.Text, txtClientCity.Text, txtClientPostCode.Text, txtClientNIP.Text, _clientId);
                     this.Close();
                     manageClientsWindow.UpdateListView();
                 }
