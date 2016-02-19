@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Faktury.Biz;
 using System.Globalization;
-using Faktury.WinForms;
 using System.Linq;
 
 namespace Faktury.WinForms
@@ -18,27 +17,22 @@ namespace Faktury.WinForms
 
         int productId = 1;
         private int _itemscounter = 0;
-        Business business = new Business();
         List<Product> products = new List<Product>();
         List<ListViewItem> items = new List<ListViewItem>();
         Invoice invoice;
-        string culture = CultureInfo.CurrentCulture.Name;
         
         /// <summary>
         /// Loading list of owners to ComboBox
         /// </summary>
         private void LoadOwnersList()
         {
-            using (var context = new FakturyContext())
-            {
-                var query = context.Owners
-                    .OrderBy(n => n.Id);
+            var owners = DBManager.DataForOwnersListView();
 
-                foreach (var owner in query)
-                {
-                    cbOwner.Items.Add(owner.Name);
-                }
+            foreach (var owner in owners)
+            {
+                cbOwner.Items.Add(owner.Name);
             }
+            
         }
 
         /// <summary>
@@ -46,16 +40,12 @@ namespace Faktury.WinForms
         /// </summary>
         private void LoadClientsList()
         {
-            using (var context = new FakturyContext())
+            var clients = DBManager.DataForClientsListView();
+            foreach (var client in clients)
             {
-                var query = context.Clients
-                    .OrderBy(n => n.Id);
-
-                foreach (var client in query)
-                {
-                    cbClient.Items.Add(client.Name);
-                }
+                cbClient.Items.Add(client.Name);
             }
+            
         }
 
         /// <summary>
@@ -65,16 +55,13 @@ namespace Faktury.WinForms
         {
             try
             {
-                using (var context = new FakturyContext())
-                {
-                    var defaultOwner = context.Owners
-                        .FirstOrDefault();
-                    txtSellerName.Text = defaultOwner.Name;
-                    txtSellerAddress.Text = defaultOwner.Address;
-                    txtSellerCity.Text = defaultOwner.City;
-                    txtSellerPostCode.Text = defaultOwner.PostCode;
-                    txtSellerNip.Text = defaultOwner.NIP;
-                }
+                var defaultOwner = DBManager.SelectDefaultOwner();
+                txtSellerName.Text = defaultOwner.Name;
+                txtSellerAddress.Text = defaultOwner.Address;
+                txtSellerCity.Text = defaultOwner.City;
+                txtSellerPostCode.Text = defaultOwner.PostCode;
+                txtSellerNip.Text = defaultOwner.NIP;
+                
             }
             catch
             {
@@ -112,8 +99,8 @@ namespace Faktury.WinForms
             {
                 try
                 {
-                   
-                    business.AddProduct(productId, name, vat, quantity, nettoprice, products);
+                    DBManager manager = new DBManager();
+                    manager.AddProduct(productId, name, vat, quantity, nettoprice, products);
                     AddProductToListView();
                     _itemscounter++;
                     productId++;
@@ -137,11 +124,11 @@ namespace Faktury.WinForms
             items.Add(new ListViewItem(productId.ToString()));
             items[_itemscounter].SubItems.Add(products[_itemscounter].Name);
             items[_itemscounter].SubItems.Add(products[_itemscounter].Quantity.ToString() + " szt.");
-            items[_itemscounter].SubItems.Add(products[_itemscounter].NettoPrice.ToString() + " zł");
+            items[_itemscounter].SubItems.Add(products[_itemscounter].NettoPrice.ToString("C"));
             items[_itemscounter].SubItems.Add(products[_itemscounter].VAT.ToString() + "%");
-            items[_itemscounter].SubItems.Add(products[_itemscounter].TotalNettoPrice.ToString() + " zł");
-            items[_itemscounter].SubItems.Add(products[_itemscounter].VATValue.ToString() + " zł");
-            items[_itemscounter].SubItems.Add(products[_itemscounter].TotalBruttoPrice.ToString() + " zł");
+            items[_itemscounter].SubItems.Add(products[_itemscounter].TotalNettoPrice.ToString("C"));
+            items[_itemscounter].SubItems.Add(products[_itemscounter].VATValue.ToString("C"));
+            items[_itemscounter].SubItems.Add(products[_itemscounter].TotalBruttoPrice.ToString("C"));
             listView1.Items.Add(items[_itemscounter]);
         }
 
@@ -156,34 +143,24 @@ namespace Faktury.WinForms
 
         public void RefreshOwnersList()
         {
-            using (var context = new FakturyContext())
-            {
-                var owner = context.Owners
-                    .Where(n => n.Name == cbOwner.Text)
-                    .FirstOrDefault();
-
-                txtSellerName.Text = owner.Name;
-                txtSellerAddress.Text = owner.Address;
-                txtSellerCity.Text = owner.City;
-                txtSellerPostCode.Text = owner.PostCode;
-                txtSellerNip.Text = owner.NIP;
-            }
+            var owner = DBManager.OwnerByName(cbOwner.Text);
+            txtSellerName.Text = owner.Name;
+            txtSellerAddress.Text = owner.Address;
+            txtSellerCity.Text = owner.City;
+            txtSellerPostCode.Text = owner.PostCode;
+            txtSellerNip.Text = owner.NIP;
+            
         }
         
         public void RefreshClientsList()
         {
-            using (var context = new FakturyContext())
-            {
-                var client = context.Clients
-                    .Where(n => n.Name == cbClient.Text)
-                    .FirstOrDefault();
-
-                txtClientName.Text = client.Name;
-                txtClientAddress.Text = client.Address;
-                txtClientCity.Text = client.City;
-                txtClientPostCode.Text = client.PostCode;
-                txtClientNip.Text = client.NIP;
-            }
+            var client = DBManager.ClientByName(cbClient.Text);
+            txtClientName.Text = client.Name;
+            txtClientAddress.Text = client.Address;
+            txtClientCity.Text = client.City;
+            txtClientPostCode.Text = client.PostCode;
+            txtClientNip.Text = client.NIP;
+            
         }
 
         private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
@@ -239,13 +216,38 @@ namespace Faktury.WinForms
 
         private bool CheckEmptyFields()
         {
+            int _fieldsCounter = 0;
+            List<string> textboxes = new List<string>();
+            textboxes.Add(txtNumber.Text);
+            textboxes.Add(txtSellerName.Text);
+            textboxes.Add(txtSellerAddress.Text);
+            textboxes.Add(txtSellerCity.Text);
+            textboxes.Add(txtClientName.Text);
+            textboxes.Add(txtClientAddress.Text);
+            textboxes.Add(txtClientCity.Text);
+            List<MaskedTextBox> maskedtextboxes = new List<MaskedTextBox>();
+            maskedtextboxes.Add(txtSellerPostCode);
+            maskedtextboxes.Add(txtSellerNip);
+            maskedtextboxes.Add(txtClientPostCode);
+            maskedtextboxes.Add(txtClientNip);
             bool _fieldsFilled = false;
-            if (!string.IsNullOrWhiteSpace(txtNumber.Text) && !string.IsNullOrWhiteSpace(txtSellerName.Text) && !string.IsNullOrWhiteSpace(txtSellerAddress.Text) && !string.IsNullOrWhiteSpace(txtSellerNip.Text))
+            foreach (string text in textboxes)
             {
-                if (!string.IsNullOrWhiteSpace(txtClientAddress.Text) && !string.IsNullOrWhiteSpace(txtClientName.Text) && !string.IsNullOrWhiteSpace(txtClientNip.Text))
+                if (!string.IsNullOrWhiteSpace(text))
                 {
-                    _fieldsFilled = true;
+                    _fieldsCounter++;
                 }
+            }
+            foreach (MaskedTextBox textbox in maskedtextboxes)
+            {
+                if (textbox.MaskCompleted)
+                {
+                    _fieldsCounter++;
+                }
+            }
+            if (_fieldsCounter == 11)
+            {
+                _fieldsFilled = true;
             }
             return _fieldsFilled;
         }
@@ -288,7 +290,7 @@ namespace Faktury.WinForms
 
         private void edytujSwojeDaneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManageOwners manageownersform = new ManageOwners(this);
+            ManageOwners manageownersform = new ManageOwners();
             manageownersform.ShowDialog(this);
         }
 

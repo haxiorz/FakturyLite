@@ -1,12 +1,5 @@
 ﻿using Faktury.Biz;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Faktury.WinForms
@@ -30,16 +23,12 @@ namespace Faktury.WinForms
         private void AddOwnerToDatabase(string name, string address, string city, string postcode, string nip)
         {
             var owner = new Owner(name, address, city, postcode, nip);
-            using (var context = new FakturyContext())
-            {
-                context.Owners.Add(owner);
-                context.SaveChanges();
-            }
+            DBManager.AddOwner(owner);
         }
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtOwnerName.Text) && !string.IsNullOrWhiteSpace(txtOwnerAddress.Text) && txtOwnerNIP.MaskCompleted)
+            if (!string.IsNullOrWhiteSpace(txtOwnerName.Text) && !string.IsNullOrWhiteSpace(txtOwnerAddress.Text) && !string.IsNullOrWhiteSpace(txtOwnerCity.Text) && txtOwnerNIP.MaskCompleted && txtOwnerPostCode.MaskCompleted)
             {
                 try
                 {

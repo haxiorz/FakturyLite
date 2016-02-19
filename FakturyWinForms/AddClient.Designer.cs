@@ -89,7 +89,7 @@
             this.btnAddClient.Location = new System.Drawing.Point(0, 172);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(428, 39);
-            this.btnAddClient.TabIndex = 4;
+            this.btnAddClient.TabIndex = 6;
             this.btnAddClient.Text = "Dodaj klienta";
             this.btnAddClient.UseVisualStyleBackColor = false;
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
@@ -100,14 +100,14 @@
             this.txtClientNIP.Mask = "000-000-00-00";
             this.txtClientNIP.Name = "txtClientNIP";
             this.txtClientNIP.Size = new System.Drawing.Size(304, 21);
-            this.txtClientNIP.TabIndex = 3;
+            this.txtClientNIP.TabIndex = 5;
             // 
             // txtClientCity
             // 
             this.txtClientCity.Location = new System.Drawing.Point(105, 75);
             this.txtClientCity.Name = "txtClientCity";
             this.txtClientCity.Size = new System.Drawing.Size(304, 21);
-            this.txtClientCity.TabIndex = 5;
+            this.txtClientCity.TabIndex = 3;
             // 
             // label4
             // 
@@ -124,7 +124,7 @@
             this.txtClientPostCode.Mask = "00-000";
             this.txtClientPostCode.Name = "txtClientPostCode";
             this.txtClientPostCode.Size = new System.Drawing.Size(304, 21);
-            this.txtClientPostCode.TabIndex = 7;
+            this.txtClientPostCode.TabIndex = 4;
             // 
             // label5
             // 
@@ -153,7 +153,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AddClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodaj klienta";

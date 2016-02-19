@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Faktury.WinForms
@@ -12,11 +8,11 @@ namespace Faktury.WinForms
        
         public static void validate_textBox(TextBox _text, KeyPressEventArgs e)
         {
-            if (e.KeyChar == ',')
+            if (e.KeyChar == '.')
             {
                 TextBox box = (TextBox)_text;
                 int pos = box.SelectionStart;
-                box.Text = box.Text.Insert(pos, ".");
+                box.Text = box.Text.Insert(pos, ",");
                 box.SelectionStart = pos + 1;
                 e.Handled = true;
             }

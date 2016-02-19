@@ -264,6 +264,12 @@
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
   </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>415, 85</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 205</value>
+  </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -383,12 +389,6 @@
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 85</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 205</value>
   </data>
   <data name="dtpDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>589, 65</value>

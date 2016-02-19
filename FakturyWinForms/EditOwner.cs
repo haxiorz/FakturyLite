@@ -1,12 +1,6 @@
 ﻿using Faktury.Biz;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Faktury.WinForms
@@ -37,23 +31,12 @@ namespace Faktury.WinForms
         /// <param name="id">Owner Id</param>
         public void EditOwnerInDatabase(string name, string address, string city, string postcode, string nip, int id)
         {
-            using (var context = new FakturyContext())
-            {
-                var owner = context.Owners
-                    .Where(n => n.Id == id)
-                    .FirstOrDefault();
-                owner.Name = name;
-                owner.Address = address;
-                owner.City = city;
-                owner.PostCode = postcode;
-                owner.NIP = nip;
-                context.SaveChanges();
-            }
+            DBManager.EditOwnerData(id, name, address, city, postcode, nip);
         }
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtOwnerName.Text) && !string.IsNullOrWhiteSpace(txtOwnerAddress.Text) && txtOwnerNIP.MaskCompleted)
+            if (!string.IsNullOrWhiteSpace(txtOwnerName.Text) && !string.IsNullOrWhiteSpace(txtOwnerAddress.Text) && !string.IsNullOrWhiteSpace(txtOwnerCity.Text) && txtOwnerNIP.MaskCompleted && txtOwnerPostCode.MaskCompleted)
             {
                 try
                 {

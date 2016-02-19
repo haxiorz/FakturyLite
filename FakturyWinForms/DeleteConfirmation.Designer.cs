@@ -75,7 +75,7 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DeleteConfirmation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Uwaga";

@@ -13,7 +13,7 @@ namespace Faktury.Test
         public void AddProduct()
         {
             //Arrange
-            Business business = new Business();
+            DBManager business = new DBManager();
             List<Product> products = new List<Product>();
             string expected = "1, Product, 23, 1, 100";
 

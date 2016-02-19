@@ -23,16 +23,12 @@ namespace Faktury.WinForms
         private void AddClientToDatabase(string name, string address, string city, string postcode, string nip)
         {
             var client = new Client(name, address, city, postcode, nip);
-            using (var context = new FakturyContext())
-            {
-                context.Clients.Add(client);
-                context.SaveChanges();
-            }
+            DBManager.AddClient(client);
         }
 
         private void btnAddClient_Click(object sender, System.EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtClientName.Text) && !string.IsNullOrWhiteSpace(txtClientAddress.Text) && txtClientNIP.MaskCompleted)
+            if (!string.IsNullOrWhiteSpace(txtClientName.Text) && !string.IsNullOrWhiteSpace(txtClientAddress.Text) && !string.IsNullOrWhiteSpace(txtClientCity.Text) && txtClientNIP.MaskCompleted && txtClientPostCode.MaskCompleted)
             {
                 try
                 {

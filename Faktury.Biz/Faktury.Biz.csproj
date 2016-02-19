@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business.cs" />
+    <Compile Include="DBManager.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="FakturyContext.cs" />

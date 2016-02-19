@@ -89,7 +89,7 @@
             this.btnAddClient.Location = new System.Drawing.Point(0, 178);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(428, 39);
-            this.btnAddClient.TabIndex = 4;
+            this.btnAddClient.TabIndex = 6;
             this.btnAddClient.Text = "Edytuj dane";
             this.btnAddClient.UseVisualStyleBackColor = false;
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
@@ -100,14 +100,14 @@
             this.txtOwnerNIP.Mask = "000-000-00-00";
             this.txtOwnerNIP.Name = "txtOwnerNIP";
             this.txtOwnerNIP.Size = new System.Drawing.Size(304, 21);
-            this.txtOwnerNIP.TabIndex = 3;
+            this.txtOwnerNIP.TabIndex = 5;
             // 
             // txtOwnerCity
             // 
             this.txtOwnerCity.Location = new System.Drawing.Point(105, 75);
             this.txtOwnerCity.Name = "txtOwnerCity";
             this.txtOwnerCity.Size = new System.Drawing.Size(304, 21);
-            this.txtOwnerCity.TabIndex = 5;
+            this.txtOwnerCity.TabIndex = 3;
             // 
             // txtOwnerPostCode
             // 
@@ -115,7 +115,7 @@
             this.txtOwnerPostCode.Mask = "00-000";
             this.txtOwnerPostCode.Name = "txtOwnerPostCode";
             this.txtOwnerPostCode.Size = new System.Drawing.Size(304, 21);
-            this.txtOwnerPostCode.TabIndex = 6;
+            this.txtOwnerPostCode.TabIndex = 4;
             // 
             // label4
             // 
@@ -153,7 +153,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EditOwner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edytuj profil";

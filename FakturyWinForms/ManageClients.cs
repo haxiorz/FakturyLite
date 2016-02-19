@@ -23,23 +23,20 @@ namespace Faktury.WinForms
         /// </summary>
         private void CreateListView()
         {
-           using (var context = new FakturyContext())
-           {
-               var query = context.Clients
-                   .OrderBy(n => n.Id);
-               var clients = query.ToList();
-               foreach (var client in clients)
-               {
-                   items.Add(new ListViewItem(client.Id.ToString()));
-                   items[_itemscounter].SubItems.Add(client.Name);
-                   items[_itemscounter].SubItems.Add(client.Address);
-                   items[_itemscounter].SubItems.Add(client.City);
-                   items[_itemscounter].SubItems.Add(client.PostCode);
-                   items[_itemscounter].SubItems.Add(client.NIP);
-                   listView1.Items.Add(items[_itemscounter]);
-                   _itemscounter++;
-               }
-           }
+            var clients = DBManager.DataForClientsListView();
+            listView1.Items.Clear();
+            foreach (var client in clients)
+            {
+                items.Add(new ListViewItem(client.Id.ToString()));
+                items[_itemscounter].SubItems.Add(client.Name);
+                items[_itemscounter].SubItems.Add(client.Address);
+                items[_itemscounter].SubItems.Add(client.City);
+                items[_itemscounter].SubItems.Add(client.PostCode);
+                items[_itemscounter].SubItems.Add(client.NIP);
+                listView1.Items.Add(items[_itemscounter]);
+                _itemscounter++;
+            }
+           
         }
 
         /// <summary>
@@ -62,15 +59,7 @@ namespace Faktury.WinForms
             {
                 ListViewItem selectedClient = listView1.SelectedItems[0];
                 int selectedClientId = Int32.Parse(selectedClient.SubItems[0].Text);
-                using (var context = new FakturyContext())
-                {
-                    var query = context.Clients
-                        .Where(n => n.Id == selectedClientId)
-                        .FirstOrDefault();
-
-                    context.Clients.Remove(query);
-                    context.SaveChanges();
-                }
+                DBManager.DeleteClient(selectedClientId);
                 UpdateListView();
             }
             catch
@@ -129,6 +118,26 @@ namespace Faktury.WinForms
         {
             e.Cancel = true;
             e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+        }
+
+
+        private void txtQueryString_TextChanged(object sender, EventArgs e)
+        {
+            var clients = DBManager.SearchClient(txtQueryString.Text);
+            items.Clear();
+            _itemscounter = 0;
+            listView1.Items.Clear();
+            foreach (var client in clients)
+            {
+                items.Add(new ListViewItem(client.Id.ToString()));
+                items[_itemscounter].SubItems.Add(client.Name);
+                items[_itemscounter].SubItems.Add(client.Address);
+                items[_itemscounter].SubItems.Add(client.City);
+                items[_itemscounter].SubItems.Add(client.PostCode);
+                items[_itemscounter].SubItems.Add(client.NIP);
+                listView1.Items.Add(items[_itemscounter]);
+                _itemscounter++;
+            }
         }
     }
 }

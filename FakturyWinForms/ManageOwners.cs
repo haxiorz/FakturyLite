@@ -8,14 +8,12 @@ namespace Faktury.WinForms
 {
     public partial class ManageOwners : Form
     {
-        public ManageOwners(Form1 main)
+        public ManageOwners()
         {
             InitializeComponent();
             CreateListView();
-            mainWindow = main;
         }
 
-        Form1 mainWindow;
         List<ListViewItem> items = new List<ListViewItem>();
         private int _itemscounter;
 
@@ -24,23 +22,20 @@ namespace Faktury.WinForms
         /// </summary>
         private void CreateListView()
         {
-            using (var context = new FakturyContext())
+            var owners = DBManager.DataForOwnersListView();
+
+            foreach (var owner in owners)
             {
-                var query = context.Owners
-                    .OrderBy(n => n.Id);
-                var owners = query.ToList();
-                foreach (var owner in owners)
-                {
-                    items.Add(new ListViewItem(owner.Id.ToString()));
-                    items[_itemscounter].SubItems.Add(owner.Name);
-                    items[_itemscounter].SubItems.Add(owner.Address);
-                    items[_itemscounter].SubItems.Add(owner.City);
-                    items[_itemscounter].SubItems.Add(owner.PostCode);
-                    items[_itemscounter].SubItems.Add(owner.NIP);
-                    listView1.Items.Add(items[_itemscounter]);
-                    _itemscounter++;
-                }
+                items.Add(new ListViewItem(owner.Id.ToString()));
+                items[_itemscounter].SubItems.Add(owner.Name);
+                items[_itemscounter].SubItems.Add(owner.Address);
+                items[_itemscounter].SubItems.Add(owner.City);
+                items[_itemscounter].SubItems.Add(owner.PostCode);
+                items[_itemscounter].SubItems.Add(owner.NIP);
+                listView1.Items.Add(items[_itemscounter]);
+                _itemscounter++;
             }
+            
         }
 
         /// <summary>
@@ -63,15 +58,7 @@ namespace Faktury.WinForms
             {
                 ListViewItem selectedClient = listView1.SelectedItems[0];
                 int selectedOwnerId = Int32.Parse(selectedClient.SubItems[0].Text);
-                using (var context = new FakturyContext())
-                {
-                    var query = context.Owners
-                        .Where(n => n.Id == selectedOwnerId)
-                        .FirstOrDefault();
-
-                    context.Owners.Remove(query);
-                    context.SaveChanges();
-                }
+                DBManager.DeleteProfile(selectedOwnerId);
                 UpdateListView();
             }
             catch (Exception err)
@@ -128,6 +115,25 @@ namespace Faktury.WinForms
         {
             e.Cancel = true;
             e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+        }
+
+        private void txtQueryString_TextChanged(object sender, EventArgs e)
+        {
+            var owners = DBManager.SearchOwner(txtQueryString.Text);
+            items.Clear();
+            _itemscounter = 0;
+            listView1.Items.Clear();
+            foreach (var owner in owners)
+            {
+                items.Add(new ListViewItem(owner.Id.ToString()));
+                items[_itemscounter].SubItems.Add(owner.Name);
+                items[_itemscounter].SubItems.Add(owner.Address);
+                items[_itemscounter].SubItems.Add(owner.City);
+                items[_itemscounter].SubItems.Add(owner.PostCode);
+                items[_itemscounter].SubItems.Add(owner.NIP);
+                listView1.Items.Add(items[_itemscounter]);
+                _itemscounter++;
+            }
         }
     }
 }
