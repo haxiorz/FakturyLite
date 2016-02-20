@@ -83,8 +83,12 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edytujSwojeDaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajKlientaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zapisaneFakturyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.btnSaveInvoice = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProductCount)).BeginInit();
@@ -437,7 +441,8 @@
             resources.ApplyResources(this.menuToolStripMenuItem, "menuToolStripMenuItem");
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.edytujSwojeDaneToolStripMenuItem,
-            this.dodajKlientaToolStripMenuItem});
+            this.dodajKlientaToolStripMenuItem,
+            this.zapisaneFakturyToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             // 
             // edytujSwojeDaneToolStripMenuItem
@@ -452,6 +457,12 @@
             this.dodajKlientaToolStripMenuItem.Name = "dodajKlientaToolStripMenuItem";
             this.dodajKlientaToolStripMenuItem.Click += new System.EventHandler(this.dodajKlientaToolStripMenuItem_Click);
             // 
+            // zapisaneFakturyToolStripMenuItem
+            // 
+            resources.ApplyResources(this.zapisaneFakturyToolStripMenuItem, "zapisaneFakturyToolStripMenuItem");
+            this.zapisaneFakturyToolStripMenuItem.Name = "zapisaneFakturyToolStripMenuItem";
+            this.zapisaneFakturyToolStripMenuItem.Click += new System.EventHandler(this.zapisaneFakturyToolStripMenuItem_Click);
+            // 
             // button1
             // 
             resources.ApplyResources(this.button1, "button1");
@@ -465,11 +476,36 @@
             resources.ApplyResources(this.label19, "label19");
             this.label19.Name = "label19";
             // 
+            // radioButton1
+            // 
+            resources.ApplyResources(this.radioButton1, "radioButton1");
+            this.radioButton1.Checked = true;
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            resources.ApplyResources(this.radioButton2, "radioButton2");
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveInvoice
+            // 
+            resources.ApplyResources(this.btnSaveInvoice, "btnSaveInvoice");
+            this.btnSaveInvoice.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSaveInvoice.Name = "btnSaveInvoice";
+            this.btnSaveInvoice.UseVisualStyleBackColor = false;
+            this.btnSaveInvoice.Click += new System.EventHandler(this.btnSaveInvoice_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.btnSaveInvoice);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPrice);
@@ -565,6 +601,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ToolStripMenuItem zapisaneFakturyToolStripMenuItem;
+        private System.Windows.Forms.Button btnSaveInvoice;
     }
 }
 

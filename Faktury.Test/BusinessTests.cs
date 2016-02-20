@@ -18,7 +18,7 @@ namespace Faktury.Test
             string expected = "1, Product, 23, 1, 100";
 
             //Act
-            business.AddProduct(1, "Product", 23, 1, 100, products);
+            business.AddProduct(1, "Product", 23, 1, 100, true, products);
             string result = products[0].Id + ", " + products[0].Name + ", " + products[0].VAT + ", " + products[0].Quantity + ", " + products[0].NettoPrice;
             //Assert
             Assert.AreEqual(expected, result);

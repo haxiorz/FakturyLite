@@ -100,7 +100,7 @@ namespace Faktury.WinForms
                 try
                 {
                     DBManager manager = new DBManager();
-                    manager.AddProduct(productId, name, vat, quantity, nettoprice, products);
+                    manager.AddProduct(productId, name, vat, quantity, nettoprice, radioButton1.Checked, products);
                     AddProductToListView();
                     _itemscounter++;
                     productId++;
@@ -325,6 +325,27 @@ namespace Faktury.WinForms
         {
             e.Cancel = true;
             e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+        }
+
+        private void zapisaneFakturyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProfileSelector profileSelector = new ProfileSelector();
+            profileSelector.ShowDialog(this);
+        }
+
+        private void btnSaveInvoice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Client client = new Client(txtClientName.Text, txtClientAddress.Text, txtClientCity.Text, txtClientPostCode.Text, txtClientNip.Text);
+                Owner owner = new Owner(txtSellerName.Text, txtSellerAddress.Text, txtSellerCity.Text, txtSellerPostCode.Text, txtSellerNip.Text);
+                invoice = new Invoice(dtpDate.Text, txtNumber.Text, client, owner, products);
+                DBManager.SaveInvoice(invoice);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
         }
 
     }

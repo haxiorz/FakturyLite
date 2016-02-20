@@ -130,6 +130,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsHelpers.cs" />
+    <Compile Include="InvoiceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceList.Designer.cs">
+      <DependentUpon>InvoiceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageClients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     </Compile>
     <Compile Include="ManageOwners.Designer.cs">
       <DependentUpon>ManageOwners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfileSelector.Designer.cs">
+      <DependentUpon>ProfileSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -162,14 +174,23 @@
     <EmbeddedResource Include="Form1.pl.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.pt.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceList.resx">
+      <DependentUpon>InvoiceList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageClients.resx">
       <DependentUpon>ManageClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageOwners.resx">
       <DependentUpon>ManageOwners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileSelector.resx">
+      <DependentUpon>ProfileSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

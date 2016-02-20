@@ -11,7 +11,7 @@ namespace Faktury.Test
         public void CalculateTotalNettoPrice()
         {
             // Arrange
-            Product product = new Product(1, "Test product", 23, 2, 100);
+            Product product = new Product(1, "Test product", 23, 2, 100, true);
             var expected = 200;
 
             // Act
@@ -25,7 +25,7 @@ namespace Faktury.Test
         public void CalculateVATValue()
         {
             // Arrange
-            Product product = new Product(1, "Test product", 23, 1, 100);
+            Product product = new Product(1, "Test product", 23, 1, 100, true);
             var expected = 23;
 
             // Act
@@ -39,7 +39,7 @@ namespace Faktury.Test
         public void CalculateBruttoPrice()
         {
             // Arrange
-            Product product = new Product(1, "Test product", 23, 1, 100);
+            Product product = new Product(1, "Test product", 23, 1, 100, true);
             var expected = 123;
 
             // Act
@@ -53,7 +53,7 @@ namespace Faktury.Test
         public void CalculateTotalBruttoPrice()
         {
             // Arrange
-            Product product = new Product(1, "Test product", 23, 2, 100);
+            Product product = new Product(1, "Test product", 23, 2, 100, true);
             var expected = 246;
 
             // Act

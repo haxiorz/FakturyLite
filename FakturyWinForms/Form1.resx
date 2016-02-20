@@ -130,11 +130,14 @@
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
     <value>65, 23</value>
   </data>
+  <data name="txtClientCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>20</value>
   </data>
   <data name="txtProduct.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 20</value>
@@ -148,9 +151,6 @@
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="columnHeader6.Width" type="System.Int32, mscorlib">
     <value>44</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label15.Name" xml:space="preserve">
     <value>label15</value>
@@ -179,8 +179,8 @@
   <data name="&gt;&gt;txtClientName.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="dtpDate.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="columnHeader1.Width" type="System.Int32, mscorlib">
     <value>41</value>
@@ -206,17 +206,20 @@
   <data name="&gt;&gt;txtClientCity.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="radioButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
   </data>
   <data name="&gt;&gt;numProductCount.Name" xml:space="preserve">
     <value>numProductCount</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="&gt;&gt;txtProduct.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="columnHeader8.Width" type="System.Int32, mscorlib">
     <value>84</value>
@@ -236,9 +239,6 @@
   <data name="columnHeader7.Width" type="System.Int32, mscorlib">
     <value>71</value>
   </data>
-  <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 63</value>
   </data>
@@ -255,10 +255,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>23</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
+  </data>
+  <data name="&gt;&gt;radioButton2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;btnCreatePDF.Name" xml:space="preserve">
     <value>btnCreatePDF</value>
@@ -332,6 +335,9 @@
   <data name="&gt;&gt;cbOwner.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
   <data name="txtSellerName.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 30</value>
   </data>
@@ -345,7 +351,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;btnAddProduct.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -353,14 +359,20 @@
   <data name="txtSellerName.MaxLength" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
-  <data name="columnHeader5.Width" type="System.Int32, mscorlib">
-    <value>75</value>
+  <data name="cbClient.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="&gt;&gt;txtClientNip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;label7.Parent" xml:space="preserve">
     <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;menuToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -373,6 +385,9 @@
   </data>
   <data name="txtClientNip.Mask" xml:space="preserve">
     <value>000-000-00-00</value>
+  </data>
+  <data name="&gt;&gt;btnCreatePDF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -401,14 +416,11 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;btnAddProduct.Name" xml:space="preserve">
-    <value>btnAddProduct</value>
-  </data>
   <data name="&gt;&gt;btnClearAll.Name" xml:space="preserve">
     <value>btnClearAll</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>21</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>FAKTURA</value>
@@ -425,8 +437,8 @@
   <data name="&gt;&gt;label11.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 24</value>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;txtPrice.Name" xml:space="preserve">
     <value>txtPrice</value>
@@ -452,8 +464,11 @@
   <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
     <value>textBox2</value>
   </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 30</value>
@@ -500,6 +515,9 @@
   <data name="&gt;&gt;txtSellerNip.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
+  <data name="&gt;&gt;zapisaneFakturyToolStripMenuItem.Name" xml:space="preserve">
+    <value>zapisaneFakturyToolStripMenuItem</value>
+  </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 253</value>
   </data>
@@ -521,6 +539,9 @@
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Lp.</value>
   </data>
+  <data name="&gt;&gt;cbOwner.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
   </data>
@@ -535,6 +556,12 @@
   </data>
   <data name="numProductCount.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="radioButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 363</value>
   </data>
   <data name="txtClientCity.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -563,8 +590,8 @@
   <data name="numProductCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 20</value>
   </data>
-  <data name="label17.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+  <data name="txtSellerCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -590,8 +617,8 @@
   <data name="&gt;&gt;label12.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cbOwner.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
   </data>
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -601,6 +628,9 @@
   </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
+  </data>
+  <data name="&gt;&gt;btnSaveInvoice.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -618,16 +648,19 @@
     <value>26</value>
   </data>
   <data name="&gt;&gt;cbVat.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;btnClearAll.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSaveInvoice.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label18.Name" xml:space="preserve">
     <value>label18</value>
   </data>
-  <data name="&gt;&gt;txtClientNip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -637,6 +670,9 @@
   </data>
   <data name="&gt;&gt;label12.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton2.Name" xml:space="preserve">
+    <value>radioButton2</value>
   </data>
   <data name="btnCreatePDF.Location" type="System.Drawing.Point, System.Drawing">
     <value>553, 531</value>
@@ -680,11 +716,11 @@
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 98</value>
   </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbOwner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
   </data>
   <data name="&gt;&gt;numProductCount.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="menuStrip1.Text" xml:space="preserve">
     <value>menuStrip1</value>
@@ -705,10 +741,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;label11.Parent" xml:space="preserve">
     <value>$this</value>
@@ -719,20 +755,20 @@
   <data name="&gt;&gt;txtClientAddress.Name" xml:space="preserve">
     <value>txtClientAddress</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 93</value>
-  </data>
   <data name="btnSelectOwner.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="&gt;&gt;txtNumber.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>22</value>
   </data>
-  <data name="cbVat.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
   <data name="&gt;&gt;txtClientName.Parent" xml:space="preserve">
     <value>groupBox2</value>
+  </data>
+  <data name="btnSaveInvoice.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
   </data>
   <data name="&gt;&gt;txtClientNip.Name" xml:space="preserve">
     <value>txtClientNip</value>
@@ -741,13 +777,10 @@
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;maskedTextBox1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="txtSellerAddress.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 60</value>
@@ -763,6 +796,9 @@
   </data>
   <data name="&gt;&gt;cbClient.Parent" xml:space="preserve">
     <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;cbVat.Name" xml:space="preserve">
+    <value>cbVat</value>
   </data>
   <data name="&gt;&gt;label16.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -792,7 +828,7 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Nazwa:</value>
@@ -801,7 +837,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;btnCreatePDF.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -809,14 +845,14 @@
   <data name="&gt;&gt;dodajKlientaToolStripMenuItem.Name" xml:space="preserve">
     <value>dodajKlientaToolStripMenuItem</value>
   </data>
+  <data name="&gt;&gt;menuToolStripMenuItem.Name" xml:space="preserve">
+    <value>menuToolStripMenuItem</value>
+  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 531</value>
   </data>
   <data name="txtSellerAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 20</value>
-  </data>
-  <data name="btnCreatePDF.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
   </data>
   <data name="&gt;&gt;txtNumber.Name" xml:space="preserve">
     <value>txtNumber</value>
@@ -832,6 +868,9 @@
   </data>
   <data name="txtClientPostCode.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
+  </data>
+  <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="edytujSwojeDaneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 22</value>
@@ -866,8 +905,8 @@
   <data name="&gt;&gt;txtSellerPostCode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="columnHeader4.Width" type="System.Int32, mscorlib">
-    <value>40</value>
+  <data name="zapisaneFakturyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
   </data>
   <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
     <value>columnHeader2</value>
@@ -887,14 +926,17 @@
   <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
     <value>textBox1</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Wyczyść produkty</value>
+  <data name="label14.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
   <data name="txtProduct.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnSaveInvoice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -906,13 +948,16 @@
     <value>356, 98</value>
   </data>
   <data name="&gt;&gt;btnClearAll.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="btnAddProduct.Location" type="System.Drawing.Point, System.Drawing">
     <value>464, 300</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 30</value>
+  </data>
+  <data name="btnSaveInvoice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>515, 558</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -936,7 +981,10 @@
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPrice.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>712, 24</value>
   </data>
   <data name="btnAddProduct.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -944,8 +992,11 @@
   <data name="cbClient.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+  <data name="txtClientAddress.MaxLength" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="&gt;&gt;radioButton1.Name" xml:space="preserve">
+    <value>radioButton1</value>
   </data>
   <data name="btnAddProduct.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 37</value>
@@ -953,8 +1004,17 @@
   <data name="menuToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
+  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;button3.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -989,11 +1049,17 @@
   <data name="&gt;&gt;button3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="columnHeader5.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
   <data name="txtSellerNip.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 90</value>
   </data>
+  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;dtpDate.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
   <data name="dodajKlientaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 22</value>
@@ -1015,6 +1081,9 @@
   </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;zapisaneFakturyToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -1070,8 +1139,14 @@
   <data name="btnClearAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 531</value>
   </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
   <data name="&gt;&gt;txtClientAddress.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="&gt;&gt;radioButton2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="txtClientNip.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 90</value>
@@ -1091,6 +1166,9 @@
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 35</value>
   </data>
+  <data name="txtPrice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
   <data name="btnSelectOwner.Location" type="System.Drawing.Point, System.Drawing">
     <value>100, 14</value>
   </data>
@@ -1099,6 +1177,9 @@
   </data>
   <data name="txtSellerPostCode.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
+  </data>
+  <data name="&gt;&gt;cbOwner.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -1143,7 +1224,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Adres:</value>
@@ -1166,6 +1247,9 @@
   <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
+  <data name="columnHeader4.Width" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1178,8 +1262,8 @@
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 13</value>
+  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 104</value>
@@ -1205,8 +1289,8 @@
   <data name="columnHeader3.Width" type="System.Int32, mscorlib">
     <value>78</value>
   </data>
-  <data name="&gt;&gt;cbVat.Name" xml:space="preserve">
-    <value>cbVat</value>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;txtPrice.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1220,8 +1304,8 @@
   <data name="&gt;&gt;numProductCount.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;menuToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtClientPostCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
   </data>
   <data name="&gt;&gt;txtSellerNip.Type" xml:space="preserve">
     <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1274,8 +1358,8 @@
   <data name="&gt;&gt;cbClient.Name" xml:space="preserve">
     <value>cbClient</value>
   </data>
-  <data name="&gt;&gt;btnCreatePDF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Nazwa produktu:</value>
@@ -1313,8 +1397,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>FakturaLite</value>
   </data>
-  <data name="txtClientAddress.MaxLength" type="System.Int32, mscorlib">
-    <value>150</value>
+  <data name="dtpDate.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1325,8 +1409,8 @@
   <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
+  <data name="cbVat.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
   <data name="&gt;&gt;label8.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1346,14 +1430,14 @@
   <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+  <data name="btnCreatePDF.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <data name="txtSellerNip.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 93</value>
   </data>
   <data name="&gt;&gt;txtClientNip.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -1369,6 +1453,12 @@
   </data>
   <data name="maskedTextBox1.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
+  </data>
+  <data name="radioButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Wyczyść produkty</value>
   </data>
   <data name="&gt;&gt;edytujSwojeDaneToolStripMenuItem.Name" xml:space="preserve">
     <value>edytujSwojeDaneToolStripMenuItem</value>
@@ -1394,11 +1484,17 @@
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 137</value>
   </data>
-  <data name="&gt;&gt;cbOwner.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="radioButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 363</value>
   </data>
   <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtSellerPostCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
   <data name="btnClearAll.Text" xml:space="preserve">
     <value>Wyczyść dane</value>
@@ -1406,8 +1502,8 @@
   <data name="&gt;&gt;txtSellerCity.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="txtPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
+  <data name="&gt;&gt;btnAddProduct.Name" xml:space="preserve">
+    <value>btnAddProduct</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1418,8 +1514,8 @@
   <data name="columnHeader2.Text" xml:space="preserve">
     <value>Nazwa towaru/usługi</value>
   </data>
-  <data name="&gt;&gt;menuToolStripMenuItem.Name" xml:space="preserve">
-    <value>menuToolStripMenuItem</value>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
   <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
     <value>columnHeader3</value>
@@ -1429,6 +1525,9 @@
   </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>
+  </data>
+  <data name="&gt;&gt;btnSaveInvoice.Name" xml:space="preserve">
+    <value>btnSaveInvoice</value>
   </data>
   <data name="&gt;&gt;label14.Name" xml:space="preserve">
     <value>label14</value>

@@ -130,12 +130,6 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 85</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 205</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label13.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -264,10 +258,10 @@
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 85</value>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 85</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 205</value>
   </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
@@ -390,6 +384,12 @@
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
   </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>415, 85</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 205</value>
+  </data>
   <data name="dtpDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>589, 65</value>
   </data>
@@ -421,13 +421,13 @@
     <value>101, 13</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 360</value>
+    <value>422, 365</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
   </data>
   <data name="numProductCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 360</value>
+    <value>471, 361</value>
   </data>
   <data name="numProductCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 21</value>
@@ -459,12 +459,6 @@
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
   </data>
-  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 388</value>
-  </data>
-  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>795, 164</value>
-  </data>
   <data name="columnHeader1.Width" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
@@ -486,6 +480,12 @@
   <data name="columnHeader8.Width" type="System.Int32, mscorlib">
     <value>107</value>
   </data>
+  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 388</value>
+  </data>
+  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>795, 164</value>
+  </data>
   <data name="btnClearAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 558</value>
   </data>
@@ -496,7 +496,7 @@
     <value>20</value>
   </data>
   <data name="btnAddProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>526, 344</value>
+    <value>617, 348</value>
   </data>
   <data name="btnAddProduct.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 37</value>
@@ -519,12 +519,6 @@
   <data name="txtPrice.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>7, 2, 0, 2</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 24</value>
-  </data>
   <data name="edytujSwojeDaneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
   </data>
@@ -533,6 +527,15 @@
   </data>
   <data name="dodajKlientaToolStripMenuItem.Text" xml:space="preserve">
     <value>Zarządzaj klientami</value>
+  </data>
+  <data name="zapisaneFakturyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zapisane faktury</value>
+  </data>
+  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>7, 2, 0, 2</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 24</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 558</value>
@@ -557,6 +560,42 @@
   </data>
   <data name="label19.Text" xml:space="preserve">
     <value>Faktury Lite</value>
+  </data>
+  <data name="radioButton1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>netto</value>
+  </data>
+  <data name="radioButton2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 17</value>
+  </data>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>brutto</value>
+  </data>
+  <data name="btnSaveInvoice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSaveInvoice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>515, 558</value>
+  </data>
+  <data name="btnSaveInvoice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 34</value>
+  </data>
+  <data name="btnSaveInvoice.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="btnSaveInvoice.Text" xml:space="preserve">
+    <value>Zapisz fakturę</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 13</value>

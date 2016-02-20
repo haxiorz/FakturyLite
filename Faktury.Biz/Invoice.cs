@@ -21,6 +21,13 @@ namespace Faktury.Biz
             this.Owner = owner;
             this.products = products;
             this.NumberOfInvoice = invoicenumber;
+            this.ClientId = client.Id;
+            this.OwnerId = owner.Id;
+        }
+
+        public Invoice()
+        {
+
         }
     }
 }

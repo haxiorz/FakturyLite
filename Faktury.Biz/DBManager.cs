@@ -147,6 +147,7 @@ namespace Faktury.Biz
             }
         }
 
+        //Searching client
         public static List<Client> SearchClient(string querystring)
         {
             using (var context = new FakturyContext())
@@ -160,6 +161,7 @@ namespace Faktury.Biz
             }           
         }
 
+        //Searching owner
         public static List<Owner> SearchOwner(string querystring)
         {
             using (var context = new FakturyContext())
@@ -173,9 +175,53 @@ namespace Faktury.Biz
             }
         }
 
-        public void AddProduct(int productId, string name, decimal vat, decimal quantity, decimal nettoprice, List<Product> products)
+        //Saving invoice
+        public static void SaveInvoice(Invoice invoiceToSave)
         {
-            products.Add(new Product(productId, name, vat, quantity, nettoprice));
+            using (var context = new FakturyContext())
+            {
+                var client = context.Clients
+                    .Where(n => n.NIP == invoiceToSave.Client.NIP)
+                    .First();
+
+                var owner = context.Owners
+                    .Where(n => n.NIP == invoiceToSave.Owner.NIP)
+                    .First();
+                Invoice invoice = new Invoice(invoiceToSave.Date, invoiceToSave.NumberOfInvoice, client, owner, invoiceToSave.products);
+
+                context.Invoices.Add(invoice);
+                context.SaveChanges();
+            }
+        }
+
+        //Retrieving data for InvoiceListView
+        public static List<Invoice> DataForInvoiceListView(int id)
+        {
+            using (var context = new FakturyContext())
+            {
+                var query = context.Invoices
+                    .Where(n => n.Owner.Id == id)
+                    .OrderBy(n => n.Date);
+                var clients = query.ToList();
+                return clients;
+            }
+        }
+
+        //Retrieving cline by id
+        public static string ClientById(int id)
+        {
+            using (var context = new FakturyContext())
+            {
+                var client = context.Clients
+                    .Where(n => n.Id == id)
+                    .FirstOrDefault();
+                return client.Name;
+            }
+        }
+
+        public void AddProduct(int productId, string name, decimal vat, decimal quantity, decimal price, bool netto, List<Product> products)
+        {
+            products.Add(new Product(productId, name, vat, quantity, price, netto));
         }
          
     }
