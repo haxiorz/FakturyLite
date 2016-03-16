@@ -335,17 +335,26 @@ namespace Faktury.WinForms
 
         private void btnSaveInvoice_Click(object sender, EventArgs e)
         {
-            try
+            if (CheckEmptyFields() && items.Count != 0)
             {
-                Client client = new Client(txtClientName.Text, txtClientAddress.Text, txtClientCity.Text, txtClientPostCode.Text, txtClientNip.Text);
-                Owner owner = new Owner(txtSellerName.Text, txtSellerAddress.Text, txtSellerCity.Text, txtSellerPostCode.Text, txtSellerNip.Text);
-                invoice = new Invoice(dtpDate.Text, txtNumber.Text, client, owner, products);
-                DBManager.SaveInvoice(invoice);
+                try
+                {
+                    Client client = new Client(txtClientName.Text, txtClientAddress.Text, txtClientCity.Text, txtClientPostCode.Text, txtClientNip.Text);
+                    Owner owner = new Owner(txtSellerName.Text, txtSellerAddress.Text, txtSellerCity.Text, txtSellerPostCode.Text, txtSellerNip.Text);
+                    invoice = new Invoice(dtpDate.Text, txtNumber.Text, client, owner, products);
+                    DBManager.SaveInvoice(invoice);
+                    MessageBox.Show("Zapisano fakturę w systemie");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.ToString());
+                }
             }
-            catch (Exception err)
+            else
             {
-                MessageBox.Show(err.ToString());
+                MessageBox.Show("Wprowadź wszystkie dane!");
             }
+                
         }
 
     }

@@ -31,13 +31,42 @@ namespace Faktury.WinForms
             listView1.Items.Clear();
             foreach (var invoice in invoices)
             {
-                items.Add(new ListViewItem(invoice.NumberOfInvoice));
+                items.Add(new ListViewItem(invoice.Id.ToString()));
+                items[_itemscounter].SubItems.Add(invoice.NumberOfInvoice);
                 items[_itemscounter].SubItems.Add(invoice.Date);
                 items[_itemscounter].SubItems.Add(DBManager.ClientById(invoice.ClientId));
                 listView1.Items.Add(items[_itemscounter]);
                 _itemscounter++;
             }
 
+        }
+
+        private void DeleteObject()
+        {
+            try
+            {
+                ListViewItem selectedClient = listView1.SelectedItems[0];
+                int selectedInvoiceId = Int32.Parse(selectedClient.SubItems[0].Text);
+                DBManager.DeleteInvoice(selectedInvoiceId);
+                UpdateListView();
+            }
+            catch
+            {
+                MessageBox.Show("Zaznacz klienta do usunięcia");
+            }
+        }
+
+        internal void UpdateListView()
+        {
+            _itemscounter = 0;
+            items.Clear();
+            listView1.Items.Clear();
+            CreateListView();
+        }
+
+        private void btnDeleteClient_Click(object sender, EventArgs e)
+        {
+            DeleteObject();
         }
     }
 }

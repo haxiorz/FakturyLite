@@ -33,7 +33,6 @@ namespace Faktury.WinForms
                     .First();
                 id = owner.Id;
             }
-            label2.Text = id.ToString();
         }
 
         private void cbOwner_MouseClick(object sender, MouseEventArgs e)

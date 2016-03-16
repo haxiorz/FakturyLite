@@ -219,6 +219,20 @@ namespace Faktury.Biz
             }
         }
 
+        //Deleting invoice
+        public static void DeleteInvoice(int selectedInvoiceId)
+        {
+            using (var context = new FakturyContext())
+            {
+                var query = context.Invoices
+                    .Where(n => n.Id == selectedInvoiceId)
+                    .FirstOrDefault();
+
+                context.Invoices.Remove(query);
+                context.SaveChanges();
+            }
+        }
+
         public void AddProduct(int productId, string name, decimal vat, decimal quantity, decimal price, bool netto, List<Product> products)
         {
             products.Add(new Product(productId, name, vat, quantity, price, netto));
